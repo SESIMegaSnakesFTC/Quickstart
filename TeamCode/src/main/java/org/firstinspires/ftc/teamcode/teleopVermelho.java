@@ -40,6 +40,7 @@ public class teleopVermelho extends LinearOpMode
 
         //Iniciar o hardware
         initconfigH();
+
         telemetry.addData("Status: ", "INICIADO, #GOMEGA");
         telemetry.update();
 
@@ -51,6 +52,19 @@ public class teleopVermelho extends LinearOpMode
         {
             // Código de controle das mecanum
             driveMecanum();
+
+            if (gamepad2.right_bumper)
+            {
+                feeder.setPower(0.8); //Ativa a rotação total do feeder
+            }
+            else if (gamepad2.left_bumper)
+            {
+                feeder.setPower(-0.8); //Ativa a rotação contrária do feeder
+            }
+            else
+            {
+                feeder.setPower(0.0); //Desliga a rotação do feeder
+            }
         }
     }
 
