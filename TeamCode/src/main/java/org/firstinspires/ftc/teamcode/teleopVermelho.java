@@ -20,12 +20,12 @@ public class teleopVermelho extends LinearOpMode
 
     // DEFININDO MOTORES MECANISMO
     private DcMotor feeder = null;
-    private DcMotor shooter = null;
-    private DcMotor viper = null;
+    //private DcMotor shooter = null;
+    //private DcMotor viper = null;
 
     // DEFININDO SERVOS
-    private Servo regulShooter = null;
-    private Servo baseShooter = null;
+    //private Servo regulShooter = null;
+    //private Servo baseShooter = null;
 
     // CONSTANTES DE CONTROLE
     public double velocidade = 1.0;
@@ -78,10 +78,10 @@ public class teleopVermelho extends LinearOpMode
 
         // INICIANDO MOTORES E SERVOS MECANINSMOS
         feeder = hardwareMap.get(DcMotor.class, "feeder");
-        shooter = hardwareMap.get(DcMotor.class, "shooter");
-        viper = hardwareMap.get(DcMotor.class, "viper1");
-        regulShooter = hardwareMap.get(Servo.class, "regulShooter");
-        baseShooter = hardwareMap.get(Servo.class, "baseShooter");
+        //shooter = hardwareMap.get(DcMotor.class, "shooter");
+        //viper = hardwareMap.get(DcMotor.class, "viper1");
+        //regulShooter = hardwareMap.get(Servo.class, "regulShooter");
+        //baseShooter = hardwareMap.get(Servo.class, "baseShooter");
 
         // DIREÇÃO MOTORES MOVIMENTO
         leftFront.setDirection(DcMotorEx.Direction.FORWARD);
@@ -91,8 +91,8 @@ public class teleopVermelho extends LinearOpMode
 
         // DIREÇÃO MOTORES MECANISMOS
         feeder.setDirection(DcMotor.Direction.REVERSE);
-        shooter.setDirection(DcMotor.Direction.REVERSE);
-        viper.setDirection(DcMotor.Direction.REVERSE);
+        //shooter.setDirection(DcMotor.Direction.REVERSE);
+        //viper.setDirection(DcMotor.Direction.REVERSE);
 
         // COMPORTAMENTO DOS MOTORES
         // CHASSI E VIPER FREIO DE MÃO
@@ -100,10 +100,10 @@ public class teleopVermelho extends LinearOpMode
         leftBack.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
         rightFront.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
         rightBack.setZeroPowerBehavior(DcMotorEx.ZeroPowerBehavior.BRAKE);
-        viper.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //viper.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         // FEEDER E SHOOTER
-        shooter.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+        //shooter.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         feeder.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
 
         // ENCODER MOTORES
@@ -111,9 +111,9 @@ public class teleopVermelho extends LinearOpMode
         leftBack.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
         rightFront.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
         rightBack.setMode(DcMotorEx.RunMode.RUN_WITHOUT_ENCODER);
-        viper.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //viper.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         feeder.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-        shooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        //shooter.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 
     private void driveMecanum() {
